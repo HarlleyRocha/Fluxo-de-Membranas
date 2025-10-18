@@ -1,78 +1,511 @@
+/* DEFINIÇÃO DE CORES: Mais suaves para leitura */
+:root {
+    --cor-principal: #333333; /* Cinza Escuro Suave (para texto normal e títulos) */
+    --cor-destaque-verde: #3a6d1a; /* Verde de Destaque (para palavras-chave) */
+    --cor-fundo-principal: #F0EDE5; /* Fundo do Body */
+    --cor-fundo-container: white;
+    --cor-fundo-lista: #faf7f0;
+}
+
 body {
-  font-family: sans-serif;
-  background-color: #E7E3D8;
-  text-align: center;
-  margin: 0;
-  padding: 21px;
+    font-family: sans-serif;
+    background-color: var(--cor-fundo-principal);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    position: relative; 
+}
+
+/* NOVO ESTILO: Container principal para centrar o conteúdo */
+.container {
+    max-width: 1000px; 
+    margin: 20px auto 40px auto; 
+    padding: 30px 20px; 
+    background-color: var(--cor-fundo-container); 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+    border-radius: 10px; 
+}
+
+/* Novo estilo para a fonte Montserrat para todos os Títulos */
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
 }
 
 h1 {
-  color: #152F04;
-  font-size: 40px;
-  margin-bottom: 10px;
-  margin-top: 1px;
+    color: var(--cor-principal); 
+    font-size: 40px;
+    margin-bottom: 10px;
+    margin-top: 1px;
 }
 
-h2{
-  color: #152F04;
-  font-size: 15px;
-  margin-bottom: 10px;
+h2 {
+    color: var(--cor-principal); 
+    font-size: 24px; 
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid var(--cor-principal); 
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-h3{
-  
+h3 {
+    color: var(--cor-destaque-verde); 
+    font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-align: left; 
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px 0;
 }
 
-p{
-  margin-top: 10px;
-  border-top: 3px solid #152F04;;
-  font-size: 20px;
-  color: #152F04;
-  font-weight: bold;
+p {
+    margin-top: 10px;
+    font-size: 16px; 
+    color: var(--cor-principal); 
+    font-weight: normal; 
+    text-align: left; 
+    max-width: 900px; 
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6; 
+}
+
+/* DESTAQUE DE PALAVRAS: Cor verde brilhante para o negrito (strong) */
+strong {
+    color: var(--cor-destaque-verde); 
+    font-weight: bold;
+}
+
+/* CLASSE DE DESTAQUE de imagem (mantida) */
+.destaque-imagem {
+    border-top: 3px solid var(--cor-principal); 
+    padding-top: 15px;
+    font-weight: bold; 
+    font-size: 20px; 
+    text-align: center;
 }
 
 img {
-  max-width: 1000px; 
-  width: 100%;       
-  
-  display: block;
-  margin: 20px auto;
-  border-radius: 100px;
+    max-width: 1000px; 
+    width: 100%; 
+    
+    display: block;
+    margin: 20px auto;
+    border-radius: 100px;
 }
 
+/* Links de Navegação */
 nav {
-  margin-top: 15px;
+    margin-top: 15px;
+    margin-bottom: 25px; 
 }
 
 nav a {
-  margin: 0 10px; /* Adiciona espaço entre os links */
-  color: #152F04;
-  text-decoration: none; /* Remove o sublinhado */
-  font-weight: bold;
+    margin: 0 15px; 
+    color: var(--cor-principal); 
+    text-decoration: none; 
+    font-weight: bold;
+    font-size: 18px;
+    position: relative; 
+    transition: color 0.3s ease; 
 }
 
 nav a:hover {
-  text-decoration: underline; /* Adiciona sublinhado quando passa o mouse */
+    color: var(--cor-destaque-verde); 
+    text-decoration: none; 
 }
 
+/* Linha animada que aparece no hover */
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -5px; 
+    left: 0;
+    background-color: var(--cor-destaque-verde); 
+    transition: width 0.3s ease; 
+}
+
+nav a:hover::after {
+    width: 100%; 
+}
+
+/* LISTAS */
+main ul {
+    list-style-type: square; 
+    text-align: left; 
+    max-width: 880px; 
+    margin: 20px auto; 
+    padding: 15px 20px;
+    background-color: var(--cor-fundo-lista); 
+    border: 1px solid #d4cfc1;
+    border-radius: 5px;
+    color: var(--cor-principal);
+}
+
+main li {
+    margin: 10px 0;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+figcaption {
+    font-size: 16px;
+    color: var(--cor-principal);
+    margin-top: 5px;
+    font-style: italic;
+    font-weight: normal;
+}
+
+/* Estilo para o Rodapé (SÓLIDO e Suave) */
+footer {
+    margin-top: 50px;
+    padding: 15px 0; 
+    background-color: #444444; 
+    color: #E7E3D8; 
+    font-size: 14px; 
+    border-top: none; 
+    width: 100%; 
+    text-align: center;
+}
+
+footer p {
+    color: #E7E3D8;
+    text-align: center;
+    max-width: none; 
+    font-weight: normal;
+    margin: 0 auto;
+}
+
+/* Ícone de Casinha */
 .botao-icone {
-  display: inline-block; /* Permite definir padding e margin */
-  padding: 15px;         /* Espaçamento interno */
-  margin: 10px;          /* Espaçamento externo */
-  
-  background-color: #152F04; /* Cor de fundo (a mesma do seu título) */
-  color: #E7E3D8;            /* Cor do ícone (a mesma do fundo do site) */
-  
-  border-radius: 100%;      /* Deixa o botão perfeitamente redondo */
-  text-decoration: none;   /* Remove o sublinhado do link */
-  
-  position: absolute; /* Permite posicionar o botão */
-  top: 10px;          /* Distância do topo */
-  left: 10px;         /* Distância da esquerda */
+    display: inline-block; 
+    padding: 15px; 
+    margin: 10px; 
+    
+    background-color: var(--cor-principal); 
+    color: #E7E3D8; 
+    
+    border-radius: 100%;
+    text-decoration: none; 
+    
+    position: absolute; 
+    top: 10px; 
+    left: 10px; 
+    z-index: 100; 
 }
 
 .botao-icone:hover {
-  background-color: #3a6d1a; 
-  transform: scale(1.2);   
-  transition: all 0.2s;     
+    background-color: var(--cor-destaque-verde); 
+    transform: scale(1.1); 
+    transition: all 0.2s;
+}
+
+.material-icons {
+    font-size: 24px; 
+    vertical-align: middle;
+}
+
+/* --- ESTILOS ESPECÍFICOS DA GALERIA DE FOTOS (CSS GRID) --- */
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 15px; 
+    max-width: 1000px; 
+    margin: 30px auto; 
+}
+
+.item-galeria {
+    overflow: hidden; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    background-color: var(--cor-fundo-container);
+}
+
+.item-galeria img {
+    width: 100%; 
+    height: 250px; 
+    object-fit: cover; 
+    border-radius: 0; 
+    margin: 0; 
+    transition: transform 0.3s ease; 
+}
+
+.item-galeria img:hover {
+    transform: scale(1.05);
+}
+
+.item-galeria figcaption {
+    font-size: 14px;
+    padding: 10px 15px;
+    color: var(--cor-principal);
+    font-style: normal;
+    text-align: center;
+    border-top: 1px solid #d4cfc1;
+}
+
+@media (max-width: 768px) {
+    .galeria-grid {
+        grid-template-columns: 1fr; 
+    }
+}/* DEFINIÇÃO DE CORES: Mais suaves para leitura */
+:root {
+    --cor-principal: #333333; /* Cinza Escuro Suave (para texto normal e títulos) */
+    --cor-destaque-verde: #3a6d1a; /* Verde de Destaque (para palavras-chave) */
+    --cor-fundo-principal: #F0EDE5; /* Fundo do Body */
+    --cor-fundo-container: white;
+    --cor-fundo-lista: #faf7f0;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: var(--cor-fundo-principal);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    position: relative; 
+}
+
+/* NOVO ESTILO: Container principal para centrar o conteúdo */
+.container {
+    max-width: 1000px; 
+    margin: 20px auto 40px auto; 
+    padding: 30px 20px; 
+    background-color: var(--cor-fundo-container); 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+    border-radius: 10px; 
+}
+
+/* Novo estilo para a fonte Montserrat para todos os Títulos */
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    color: var(--cor-principal); 
+    font-size: 40px;
+    margin-bottom: 10px;
+    margin-top: 1px;
+}
+
+h2 {
+    color: var(--cor-principal); 
+    font-size: 24px; 
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid var(--cor-principal); 
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h3 {
+    color: var(--cor-destaque-verde); 
+    font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-align: left; 
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px 0;
+}
+
+p {
+    margin-top: 10px;
+    font-size: 16px; 
+    color: var(--cor-principal); 
+    font-weight: normal; 
+    text-align: left; 
+    max-width: 900px; 
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6; 
+}
+
+/* DESTAQUE DE PALAVRAS: Cor verde brilhante para o negrito (strong) */
+strong {
+    color: var(--cor-destaque-verde); 
+    font-weight: bold;
+}
+
+/* CLASSE DE DESTAQUE de imagem (mantida) */
+.destaque-imagem {
+    border-top: 3px solid var(--cor-principal); 
+    padding-top: 15px;
+    font-weight: bold; 
+    font-size: 20px; 
+    text-align: center;
+}
+
+img {
+    max-width: 1000px; 
+    width: 100%; 
+    
+    display: block;
+    margin: 20px auto;
+    border-radius: 100px;
+}
+
+/* Links de Navegação */
+nav {
+    margin-top: 15px;
+    margin-bottom: 25px; 
+}
+
+nav a {
+    margin: 0 15px; 
+    color: var(--cor-principal); 
+    text-decoration: none; 
+    font-weight: bold;
+    font-size: 18px;
+    position: relative; 
+    transition: color 0.3s ease; 
+}
+
+nav a:hover {
+    color: var(--cor-destaque-verde); 
+    text-decoration: none; 
+}
+
+/* Linha animada que aparece no hover */
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -5px; 
+    left: 0;
+    background-color: var(--cor-destaque-verde); 
+    transition: width 0.3s ease; 
+}
+
+nav a:hover::after {
+    width: 100%; 
+}
+
+/* LISTAS */
+main ul {
+    list-style-type: square; 
+    text-align: left; 
+    max-width: 880px; 
+    margin: 20px auto; 
+    padding: 15px 20px;
+    background-color: var(--cor-fundo-lista); 
+    border: 1px solid #d4cfc1;
+    border-radius: 5px;
+    color: var(--cor-principal);
+}
+
+main li {
+    margin: 10px 0;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+figcaption {
+    font-size: 16px;
+    color: var(--cor-principal);
+    margin-top: 5px;
+    font-style: italic;
+    font-weight: normal;
+}
+
+/* Estilo para o Rodapé (SÓLIDO e Suave) */
+footer {
+    margin-top: 50px;
+    padding: 15px 0; 
+    background-color: #444444; 
+    color: #E7E3D8; 
+    font-size: 14px; 
+    border-top: none; 
+    width: 100%; 
+    text-align: center;
+}
+
+footer p {
+    color: #E7E3D8;
+    text-align: center;
+    max-width: none; 
+    font-weight: normal;
+    margin: 0 auto;
+}
+
+/* Ícone de Casinha */
+.botao-icone {
+    display: inline-block; 
+    padding: 15px; 
+    margin: 10px; 
+    
+    background-color: var(--cor-principal); 
+    color: #E7E3D8; 
+    
+    border-radius: 100%;
+    text-decoration: none; 
+    
+    position: absolute; 
+    top: 10px; 
+    left: 10px; 
+    z-index: 100; 
+}
+
+.botao-icone:hover {
+    background-color: var(--cor-destaque-verde); 
+    transform: scale(1.1); 
+    transition: all 0.2s;
+}
+
+.material-icons {
+    font-size: 24px; 
+    vertical-align: middle;
+}
+
+/* --- ESTILOS ESPECÍFICOS DA GALERIA DE FOTOS (CSS GRID) --- */
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 15px; 
+    max-width: 1000px; 
+    margin: 30px auto; 
+}
+
+.item-galeria {
+    overflow: hidden; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    background-color: var(--cor-fundo-container);
+}
+
+.item-galeria img {
+    width: 100%; 
+    height: 250px; 
+    object-fit: cover; 
+    border-radius: 0; 
+    margin: 0; 
+    transition: transform 0.3s ease; 
+}
+
+.item-galeria img:hover {
+    transform: scale(1.05);
+}
+
+.item-galeria figcaption {
+    font-size: 14px;
+    padding: 10px 15px;
+    color: var(--cor-principal);
+    font-style: normal;
+    text-align: center;
+    border-top: 1px solid #d4cfc1;
+}
+
+@media (max-width: 768px) {
+    .galeria-grid {
+        grid-template-columns: 1fr; 
+    }
 }
